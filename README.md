@@ -8,7 +8,7 @@ The notebook is based on [Whisper](https://https://github.com/openai/whisper), a
 
 The output file will be in .ass format with built-in style of selected sub group so it can be directly imported into [Aegisub](https://github.com/Aegisub/Aegisub) for subsequent editing.
 
-##How to use
+## How to use
 * [Click here](https://colab.research.google.com/github/Ayanaminn/N46Whisper/blob/main/N46Whisper.ipynb) to open the notebook in Google Colab.
 * Upload file and follow the instruction to run the notebook.
 * The ass file will be automatically downloaded once done.
