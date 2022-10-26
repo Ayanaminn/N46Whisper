@@ -111,9 +111,9 @@ def srt2ass(input_file,sub_style):
     return output_file
 
 
-if len(sys.argv) > 1:
-    for name in sys.argv[1:]:
-        srt2ass(name)
+# if len(sys.argv) > 1:
+#     for name in sys.argv[1:]:
+#         srt2ass(name,sub_style=)
 
 
 head_str_default = '''[Script Info]
