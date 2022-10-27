@@ -2,7 +2,7 @@
 
 Language : [English](./README.md)  | 简体中文
 
-N46Whisper 是基于 Google Colab 的应用。旨在提高乃木坂46（以及坂道系）字幕组的工作效率。
+N46Whisper 是基于 Google Colab 的应用。开发初衷旨在提高乃木坂46（以及坂道系）字幕组的工作效率。但本应用亦适于所有日语视频的字幕制作。
 
 此应用基于AI语音识别模型 [Whisper](https://github.com/openai/whisper)
 
