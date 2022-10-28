@@ -2,7 +2,7 @@
 #
 # python-srt2ass: https://github.com/ewwink/python-srt2ass
 # by: ewwink
-# modified by: 一堂宁宁
+# modified by:  一堂宁宁
 
 import sys
 import os
