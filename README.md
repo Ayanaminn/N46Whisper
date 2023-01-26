@@ -9,6 +9,9 @@ The notebook is based on [Whisper](https://github.com/openai/whisper), a general
 The output file will be in .ass format with built-in style of selected sub group so it can be directly imported into [Aegisub](https://github.com/Aegisub/Aegisub) for subsequent editing.
 
 ## Updates：
+2023.01.26：
+* Update script to relect recent changes in Whisper.
+
 2022.12.31：
 * Allow user to select files directly from mounted google drive.
 * Other minor fixes.
