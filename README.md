@@ -1,8 +1,8 @@
-# N46Whisper
+# FeimiWhisper
 
 Language : English | [简体中文](./README_CN.md) 
 
-N46Whisper is a Google Colab notebook application that developed for streamlined video subtitle file generation to improve productivity of Nogizaka46 (and Sakamichi groups) subbers.
+FeimiWhisper is a Google Colab notebook application that developed for streamlined video subtitle file generation to improve productivity of any subbers (AKB48 fan myself).
 
 The notebook is based on [N46Whisper](https://github.com/Ayanaminn/N46Whisper) and [Whisper](https://github.com/openai/whisper), a general-prupose speech recognition model.
 
