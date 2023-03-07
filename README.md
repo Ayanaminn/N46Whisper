@@ -11,7 +11,7 @@ The output file will be in .ass format with built-in style of selected sub group
 ## Updates：
 
 2023.01.26：
-* Update script to relect recent changes in Whisper.
+* Update script to reflect recent changes in Whisper.
 
 2022.12.31：
 * Allow user to select files directly from mounted google drive.
