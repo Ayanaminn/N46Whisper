@@ -26,6 +26,25 @@ The output file will be in .ass format with built-in style of selected sub group
 * Upload file and follow the instruction to run the notebook.
 * The ass file will be automatically downloaded once done.
 
+## AI translation
+The notebook now allow users to translate transcribed subtitle text line by line using AT translation tools.
+
+Currently, it support `chatGPT` and default target language is `zh-CN`.
+
+The translated text will be append in same line with the original text and sepearted by `/N`, such that a new bilingual subtitle file is generated.
+
+For example: 
+
+![QQ截图20230312155700](https://user-images.githubusercontent.com/49441654/224525469-18a43cbc-33b9-4b2f-b7ca-7ae0c1865b17.png)
+
+A preview of bilingual subtitle:
+
+![QQ截图20230312160015](https://user-images.githubusercontent.com/49441654/224525526-51e2123c-6e1c-427c-8d67-9ccd4a7e6630.png)
+
+To use the AI translation, users must use their own OpenAI API Key. To obtain a free Key, go to https://platform.openai.com/account/api-keys
+
+Please note there will be limitaions on usage for free keys, choose paid plan to speed up at your own cost.
+
 ## Support
 The application can substantially reduce the labor and time cost of sub groups or individual subbers. However, despite the impressive performance, the Whisper model and the application itself are not come without limitations. Please read the orgininal documents and Discussions to learn more about the usage of Whisper and the common issues.
 
@@ -33,3 +52,4 @@ However, if you have any throughts, requests or questions that directly related 
 
 ## License
 The code is released under the MIT license. See [License](./LICENSE.md) for details.
+
