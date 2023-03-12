@@ -10,6 +10,10 @@ The output file will be in .ass format with built-in style of selected sub group
 
 ## Updates：
 
+2023.3.12:
+* Add chatGPT translation and bilingual subtitle file generation features.
+* Update doc and other minor fixes.
+
 2023.01.26：
 * Update script to reflect recent changes in Whisper.
 
