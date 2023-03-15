@@ -8,7 +8,10 @@ The notebook is based on [Whisper](https://github.com/openai/whisper), a general
 
 The output file will be in Advanced SubStation Alpha(ass) format with built-in style of selected sub group so it can be directly imported into [Aegisub](https://github.com/Aegisub/Aegisub) for subsequent editing.
 
-## Updates：
+## What's New：
+2023.3.15:
+* Add functions to split multiple words/sententces in one line.
+* Update documents and other minor fixes.
 
 2023.3.12:
 * Add chatGPT translation and bilingual subtitle file generation features.
@@ -44,6 +47,17 @@ An example of bilingual subtitle:
 To use the AI translation, users must use their own OpenAI API Key. To obtain a free Key, go to https://platform.openai.com/account/api-keys
 
 Please note there will be limitaions on usage for free keys, choose a paid plan to speed up at your own cost.
+
+## Split lines
+Users can choose to split text in a single line by space.The child lines will have same time stamp with the parent line, respectively.
+
+For instance, for a line contains multiple long sentences:
+>Dialogue: 0,0:01:00.52,0:01:17.52,default,,0,0,0,,Birthday Liveについて話そうかなと思います よろしくお願いします
+
+After split:
+>Dialogue: 0,0:01:00.52,0:01:17.52,default,,0,0,0,,Birthday Liveについて話そうかなと思います(adjust_required)
+
+>Dialogue: 0,0:01:00.52,0:01:17.52,default,,0,0,0,,ろしくお願いします(adjust_required)
 
 ## Support
 The application can substantially reduce the labor and time cost of sub groups or individual subbers. However, despite the impressive performance, the Whisper model and the application itself are not come without limitations. Please read the orgininal documents and Discussions to learn more about the usage of Whisper and the common issues.
