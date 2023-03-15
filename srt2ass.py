@@ -2,7 +2,7 @@
 #
 # python-srt2ass: https://github.com/ewwink/python-srt2ass
 # by: ewwink
-# modified by:  一堂宁宁
+# modified by:  一堂宁宁 Lenshyuu227
 
 import sys
 import os
@@ -80,7 +80,7 @@ def srt2ass(input_file,sub_style, is_split, split_method):
                         # do not split if space proceed and followed by non-ASC-II characters
                         # do not split if space followed by word that less than 5 characters
                         split_string = re.sub(r'(?<=[^\x00-\x7F])\s+(?=[^\x00-\x7F])(?=\w{5})', r'|', dlg_string)
-                        print(split_string)
+                        # print(split_string)
                         if len(split_string.split('|')) > 1:
                             dlgLines += (split_string.replace('|', "(adjust_required)\n" + dlgLines)) + "(adjust_required)"
                         else:
