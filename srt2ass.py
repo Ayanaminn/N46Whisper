@@ -26,7 +26,7 @@ def fileopen(input_file):
     return [srt_src, enc]
 
 
-def srt2ass(input_file,sub_style):
+def srt2ass(input_file,sub_style, split):
     if '.ass' in input_file:
         return input_file
 
@@ -75,7 +75,11 @@ def srt2ass(input_file,sub_style):
                     dlgLines += 'Dialogue: 0,' + line + ',正文_1080P,,0,0,0,,'
             else:
                 if lineCount < 2:
-                    dlgLines += line
+                    dialogue = dlgLines
+                    if len(line.split()) > 1 and split == "Yes":
+                        dlgLines += line.replace(' ', "(adjust_required)\n" + dialogue)
+                    else:
+                        dlgLines += line
                 else:
                     dlgLines += "\n" + line
             lineCount += 1
