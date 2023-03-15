@@ -6,7 +6,7 @@
 
 import sys
 import os
-import re
+import regex as re
 import codecs
 
 
@@ -26,7 +26,7 @@ def fileopen(input_file):
     return [srt_src, enc]
 
 
-def srt2ass(input_file,sub_style, split):
+def srt2ass(input_file,sub_style, is_split, split_method):
     if '.ass' in input_file:
         return input_file
 
@@ -75,9 +75,24 @@ def srt2ass(input_file,sub_style, split):
                     dlgLines += 'Dialogue: 0,' + line + ',正文_1080P,,0,0,0,,'
             else:
                 if lineCount < 2:
-                    dialogue = dlgLines
-                    if len(line.split()) > 1 and split == "Yes":
-                        dlgLines += line.replace(' ', "(adjust_required)\n" + dialogue)
+                    dlg_string = line
+                    if is_split == "Yes" and split_method == 'Modest':
+                        # do not split if space proceed and followed by non-ASC-II characters
+                        # do not split if space followed by word that less than 5 characters
+                        split_string = re.sub(r'(?<=[^\x00-\x7F])\s+(?=[^\x00-\x7F])(?=\w{5})', r'|', dlg_string)
+                        print(split_string)
+                        if len(split_string.split('|')) > 1:
+                            dlgLines += (split_string.replace('|', "(adjust_required)\n" + dlgLines)) + "(adjust_required)"
+                        else:
+                            dlgLines += line
+                    elif is_split == "Yes" and split_method == 'Aggressive':
+                        # do not split if space proceed and followed by non-ASC-II characters
+                        # split at all the rest spaces
+                        split_string = re.sub(r'(?<=[^\x00-\x7F])\s+(?=[^\x00-\x7F])', r'|', dlg_string)
+                        if len(split_string.split('|')) > 1:
+                            dlgLines += (split_string.replace('|',"(adjust_required)\n" + dlgLines)) + "(adjust_required)"
+                        else:
+                            dlgLines += line
                     else:
                         dlgLines += line
                 else:
@@ -233,4 +248,4 @@ Dialogue: 0,0:00:00.00,0:00:05.00,正文_1080P,,0,0,0,,谷口爱季字幕组'''
 
 
 # if __name__ == "__main__":
-#     srt2ass('test.srt','sugawaraCN')
+#     srt2ass('sub_split_test.srt','sugawaraCN','No','Aggressive')
