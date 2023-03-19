@@ -60,7 +60,7 @@ After split:
 >Dialogue: 0,0:01:00.52,0:01:17.52,default,,0,0,0,,ろしくお願いします(adjust_required)
 
 ## Support
-The application can substantially reduce the labor and time cost of sub groups or individual subbers. However, despite the impressive performance, the Whisper model and the application itself are not come without limitations. Please read the orgininal documents and Discussions to learn more about the usage of Whisper and the common issues.
+The application could significantly reduce the labour and time costs of sub-groups or individual subbers. However, despite its impressive performance, the Whisper model and the application itself are not without limitations.Please read the orgininal documents and Discussions to learn more about the usage of Whisper and the common issues.
 
 However, if you have any throughts, requests or questions that directly related to making subtitiles for Sakamichi group girls, please feel free to post here or [contact me](mailto:admin@ikedateresa.cc)
 
