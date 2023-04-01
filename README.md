@@ -8,31 +8,23 @@ The notebook is based on [Whisper](https://github.com/openai/whisper), a general
 
 The output file will be in Advanced SubStation Alpha(ass) format with built-in style of selected sub group so it can be directly imported into [Aegisub](https://github.com/Aegisub/Aegisub) for subsequent editing.
 
-## What's New：
-2023.3.15:
-* Add functions to split multiple words/sententces in one line.
+## What's Latest：
+2023.4.1:
+* Update workflow, use pysubs2 library instead of Whisper WriteSRT class for sub file manipulation.
+* Support upload srt or ass file to use AI translation function independently, support display translation progress.
 * Update documents and other minor fixes.
-
-2023.3.12:
-* Add chatGPT translation and bilingual subtitle file generation features.
-* Update documents and other minor fixes.
-
-2023.01.26：
-* Update scripts to reflect recent changes in Whisper.
-
-2022.12.31：
-* Allow user to select files directly from mounted google drive.
-* Other minor fixes.
 
 ## How to use
 * [Click here](https://colab.research.google.com/github/Ayanaminn/N46Whisper/blob/main/N46Whisper.ipynb) to open the notebook in Google Colab.
 * Upload file and follow the instruction to run the notebook.
-* The ass file will be automatically downloaded once done.
+* The subtitle file will be automatically downloaded once done.
 
 ## AI translation
 The notebook now allow users to translate transcribed subtitle text line by line using AT translation tools.
 
-Currently, it supports `chatGPT` and the default target language is `zh-CN`.
+Users can also upload local subtitle files or select files from google drive for translation.
+
+Currently, it supports `chatGPT` translation. 
 
 The translated text will be append in the same line after the original text and sepearted by `/N`, such that a new bilingual subtitle file is generated.
 
@@ -58,6 +50,23 @@ After split:
 >Dialogue: 0,0:01:00.52,0:01:17.52,default,,0,0,0,,Birthday Liveについて話そうかなと思います(adjust_required)
 
 >Dialogue: 0,0:01:00.52,0:01:17.52,default,,0,0,0,,ろしくお願いします(adjust_required)
+
+## Update history：
+
+2023.3.15:
+* Add functions to split multiple words/sententces in one line.
+* Update documents and other minor fixes.
+
+2023.3.12:
+* Add chatGPT translation and bilingual subtitle file generation features.
+* Update documents and other minor fixes.
+
+2023.01.26：
+* Update scripts to reflect recent changes in Whisper.
+
+2022.12.31：
+* Allow user to select files directly from mounted google drive.
+* Other minor fixes.
 
 ## Support
 The application could significantly reduce the labour and time costs of sub-groups or individual subbers. However, despite its impressive performance, the Whisper model and the application itself are not without limitations.Please read the orgininal documents and Discussions to learn more about the usage of Whisper and the common issues.
