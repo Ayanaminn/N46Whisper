@@ -9,10 +9,8 @@ The notebook is based on [Whisper](https://github.com/openai/whisper), a general
 The output file will be in Advanced SubStation Alpha(ass) format with built-in style of selected sub group so it can be directly imported into [Aegisub](https://github.com/Aegisub/Aegisub) for subsequent editing.
 
 ## What's Latest：
-2023.4.1:
-* Update workflow, use pysubs2 library instead of Whisper WriteSRT class for sub file manipulation.
-* Support upload srt or ass file to use AI translation function independently, support display translation progress.
-* Update documents and other minor fixes.
+2023.4.10:
+* Support for select/upload multiple files to batch process.
 
 ## How to use
 * [Click here](https://colab.research.google.com/github/Ayanaminn/N46Whisper/blob/main/N46Whisper.ipynb) to open the notebook in Google Colab.
@@ -52,6 +50,11 @@ After split:
 >Dialogue: 0,0:01:00.52,0:01:17.52,default,,0,0,0,,ろしくお願いします(adjust_required)
 
 ## Update history：
+
+2023.4.1:
+* Update workflow, use pysubs2 library instead of Whisper WriteSRT class for sub file manipulation.
+* Support upload srt or ass file to use AI translation function independently, support display translation progress.
+* Update documents and other minor fixes.
 
 2023.3.15:
 * Add functions to split multiple words/sententces in one line.
