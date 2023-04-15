@@ -4,13 +4,16 @@ Language : [English](./README.md)  | 简体中文
 
 N46Whisper 是基于 Google Colab 的应用。开发初衷旨在提高乃木坂46（以及坂道系）字幕组的工作效率。但本应用亦适于所有日语视频的字幕制作。
 
-此应用基于AI语音识别模型 [Whisper](https://github.com/openai/whisper)
+此应用基于AI语音识别模型 [Whisper](https://github.com/openai/whisper)的优化部署 [faster-whisper](https://github.com/guillaumekln/faster-whisper).
 
 应用输出文件为ass或srt格式，内置指定字幕组的字幕格式，可直接导入 [Aegisub](https://github.com/Aegisub/Aegisub) 进行后续翻译及时间轴校正。
 
 ## 最近更新:
-2023.4.10:
-* 支持选择/上传多个文件以批量转录。
+2023.4.15:
+* 使用faster-whisper模型重新部署以提高效率，节省资源
+* 提供faster-whisper集成的vad filter选项以提高转录精度
+
+
 
 
 ## 如何使用
@@ -61,6 +64,8 @@ N46Whisper 是基于 Google Colab 的应用。开发初衷旨在提高乃木坂4
 此外可以看到，在两种情况下英文单字都不会被分割。
 
 ## 更新日志
+2023.4.10:
+* 支持选择/上传多个文件以批量转录。
 
 2023.4.1:
 * 更新工作流程，使用pysubs2库代替Whisper自带的WriteSRT类处理字幕文件格式。
