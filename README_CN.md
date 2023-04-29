@@ -9,11 +9,14 @@ N46Whisper 是基于 Google Colab 的应用。开发初衷旨在提高乃木坂4
 应用输出文件为ass或srt格式，内置指定字幕组的字幕格式，可直接导入 [Aegisub](https://github.com/Aegisub/Aegisub) 进行后续翻译及时间轴校正。
 
 ## 最近更新:
+2023.4.30:
+* 优化提示词
+* 允许用户使用个人提示词并调节Temperature参数
+* 显示翻译任务消费统计
+
 2023.4.15:
 * 使用faster-whisper模型重新部署以提高效率，节省资源
 * 提供faster-whisper集成的vad filter选项以提高转录精度
-
-
 
 
 ## 如何使用
