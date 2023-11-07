@@ -10,8 +10,14 @@ This implementation is up to 4 times faster than original Whisper for the same a
 The output file will be in Advanced SubStation Alpha(ass) format with built-in style of selected sub group so it can be directly imported into [Aegisub](https://github.com/Aegisub/Aegisub) for subsequent editing.
 
 ## What's Latest：
-2023.7.18:
-* Thanks for all the reported issues PRs and requests. Unfortunately I have been heavily occupied by work and couldn't spend much time on this project so for the time being it will stay as it is. 
+
+This projuct can only be maintained and updated irregularly due to perosonal busyness. Thank you.
+
+
+2023.11.7:
+* Enable users to load lastest Whisper V3 model.
+* Enable customrize beam size parameter.
+
 
 2023.4.30:
 * Refine the translation prompt.
