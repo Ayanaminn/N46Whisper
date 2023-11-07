@@ -16,7 +16,7 @@ This projuct can only be maintained and updated irregularly due to perosonal bus
 
 2023.11.7:
 * Enable users to load lastest Whisper V3 model.
-* Enable customrize beam size parameter.
+* Enable customerize beam size parameter.
 
 
 2023.4.30:
