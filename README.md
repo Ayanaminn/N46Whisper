@@ -14,6 +14,9 @@ The output file will be in Advanced SubStation Alpha(ass) format with built-in s
 This projuct can only be maintained and updated irregularly due to perosonal busyness. Thank you.
 
 
+2023.12.4:
+* Add support for v3 model based on faster-whisper
+
 2023.11.7:
 * Enable users to load lastest Whisper V3 model.
 * Enable customerize beam size parameter.
@@ -25,7 +28,7 @@ This projuct can only be maintained and updated irregularly due to perosonal bus
 * Display the token used and total cost for the translation task.
 
 2023.4.15:
-* Reimplement Whsiper based on faster-whsiper to improve efficiency
+* Reimplement Whsiper based on faster-whisper to improve efficiency
 * Enable vad filter that integrated within faster-whisper to improve transcribe accuracy
 
 ## How to use
