@@ -18,15 +18,6 @@ N46Whisper 是基于 Google Colab 的应用。开发初衷旨在提高乃木坂4
 * 可以使用最新的Whisper V3 model。
 * 可以自定义beam size参数。
 
-2023.4.30:
-* 优化提示词
-* 允许用户使用个人提示词并调节Temperature参数
-* 显示翻译任务消费统计
-
-2023.4.15:
-* 使用faster-whisper模型重新部署以提高效率，节省资源
-* 提供faster-whisper集成的vad filter选项以提高转录精度
-
 
 ## 如何使用
 * [点击这里](https://colab.research.google.com/github/Ayanaminn/N46Whisper/blob/main/N46Whisper.ipynb) 在Google Colab中打开应用.
@@ -76,6 +67,16 @@ N46Whisper 是基于 Google Colab 的应用。开发初衷旨在提高乃木坂4
 此外可以看到，在两种情况下英文单字都不会被分割。
 
 ## 更新日志
+
+2023.4.30:
+* 优化提示词
+* 允许用户使用个人提示词并调节Temperature参数
+* 显示翻译任务消费统计
+
+2023.4.15:
+* 使用faster-whisper模型重新部署以提高效率，节省资源
+* 提供faster-whisper集成的vad filter选项以提高转录精度
+  
 2023.4.10:
 * 支持选择/上传多个文件以批量转录。
 
