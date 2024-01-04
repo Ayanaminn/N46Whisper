@@ -13,6 +13,8 @@ The output file will be in Advanced SubStation Alpha(ass) format with built-in s
 
 This projuct can only be maintained and updated irregularly due to perosonal busyness. Thank you.
 
+2024.1.4:
+* add instructions for users to solve the GPU inaccessible issue due to colab upgrade
 
 2023.12.4:
 * Add support for v3 model based on faster-whisper
