@@ -1,18 +1,6 @@
 # Migrated from Colab
 
-# Required packages: pysubs2, openai, tqdm, toml
-
-import toml
-
-# Load the configuration file
-config = toml.load("config.toml")
-
-# Accessing the data
-target_language = config["translation"]["target_language"]
-prompt = config["translation"]["prompt"]
-temperature = config["translation"]["temperature"]
-output_format = config["translation"]["output_format"]
-
+# Required packages: pysubs2, openai, tqdm
 import os
 import time
 from pathlib import Path
@@ -20,9 +8,35 @@ from tqdm import tqdm
 import argparse
 
 # Command line arguments
-parser = argparse.ArgumentParser("AI translator for subtitles")
+parser = argparse.ArgumentParser(
+    "AI translator for subtitles",
+    formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+)
 parser.add_argument("input_file", help="The path of input subtitle file")
+parser.add_argument("--openai_key", help="The OpenAI API key", required=True)
+parser.add_argument("--openai_model", default="gpt-3.5-turbo", help="The OpenAI model")
+parser.add_argument(
+    "--target_language", default="zh_hans", help="The target language to translate to"
+)
+parser.add_argument(
+    "--prompt",
+    default="""
+You are a language expert.
+Your task is to translate the input subtitle text, sentence by sentence, into the user specified target language.
+However, please utilize the context to improve the accuracy and quality of translation.
+Please be aware that the input text could contain typos and grammar mistakes, utilize the context to correct the translation.
+Please return only translated content and do not include the origin text.
+Please do not use any punctuation around the returned text.
+Please do not translate people's name and leave it as original language.
+""",
+    help="The prompt",
+)
+parser.add_argument("--temperature", default=0.6, help="The temperature")
+parser.add_argument(
+    "--output-format", default="ass", choices=["srt", "ass"], help="The output format"
+)
 args = parser.parse_args()
+
 
 # Check if the input file exists
 if not Path(args.input_file).exists():
@@ -31,20 +45,20 @@ sub_name = args.input_file
 sub_filename = (
     Path(sub_name)
     .with_stem(Path(sub_name).stem + "_translation")
-    .with_suffix("." + output_format)
+    .with_suffix("." + args.output_format)
 )
 
-print("Input file path is basename + sub_name: ", sub_basename, sub_name)
+print("Input file path is: ", sub_name)
 
 # Cannot change the base url for openai sdk now
 # Workaround is set the environment variable
-os.environ["OPENAI_API_BASE"] = config["openai"]["api_base"]
-# Or set it via command line: export OPENAI_API_BASE="https://api.openai.com/v1"
+# os.environ["OPENAI_BASE_URL"] = "https://api.openai.com/v1"
+# Or set it via command line: export OPENAI_BASE_URL="https://api.openai.com/v1"
 
 import openai
 
 # openai.base_url = config["openai"]["api_base"]
-openai.api_key = config["openai"]["api_key"]
+openai.api_key = args.openai_key
 
 import pysubs2
 
@@ -98,7 +112,7 @@ class ChatGPTAPI:
                 api_key=self.key,
             )
             completion = client.chat.completions.create(
-                model="gpt-3.5-turbo",
+                model=args.openai_model,
                 messages=[
                     {"role": "system", "content": f"{self.prompt}"},
                     {
@@ -140,7 +154,7 @@ class SubtitleTranslator:
 translate_model = ChatGPTAPI
 
 assert translate_model is not None, "unsupported model"
-OPENAI_API_KEY = config["openai"]["api_key"]
+OPENAI_API_KEY = args.openai_key
 
 if not OPENAI_API_KEY:
     raise Exception("OpenAI API key not provided, please google how to obtain it")
@@ -151,23 +165,15 @@ t = SubtitleTranslator(
     sub_src=sub_name,
     model=translate_model,
     key=OPENAI_API_KEY,
-    language=target_language,
-    prompt=prompt,
-    temperature=temperature,
+    language=args.target_language,
+    prompt=args.prompt,
+    temperature=args.temperature,
 )
 
 translation, _, total_token = t.translate_by_line()
 total_price = t.calculate_price(total_token)
 # Download ass file
 
-"""
-if output_format == "ass":
-    translation.save(str(sub_basename) + "_translation.ass")
-    print("Saved translation file:", str(sub_basename) + "_translation.ass")
-elif output_format == "srt":
-    translation.save(str(sub_basename) + "_translation.srt")
-    print("Saved translation file:", (sub_basename) + "_translation.srt")
-"""
 translation.save(sub_filename)
 print("Saved translation file:", sub_filename)
 
