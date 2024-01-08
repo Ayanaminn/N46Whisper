@@ -1,0 +1,11 @@
+# OpenAI configurations
+[openai]
+api_base = "https://api.openai.com/v1" # OpenAI API base URL
+api_key = "" # OpenAI API key
+
+# Translation configurations
+[translation]
+target_language = "zh-hans" # Target language for translation, possible options "zh_hans", "english"
+prompt = "You are a language expert.Your task is to translate the input subtitle text, sentence by sentence, into the user specified target language.However, please utilize the context to improve the accuracy and quality of translation.Please be aware that the input text could contain typos and grammar mistakes, utilize the context to correct the translation.Please return only translated content and do not include the origin text.Please do not use any punctuation around the returned text.Please do not translate people's name and leave it as original language." # Prompt for the translation model
+temperature = 0.6 # Temperature for the translation model, min: 0, max: 1.0, step: 0.1
+output_format = "ass"  # Output format for the subtitles, supports "ass" and "srt"
