@@ -28,17 +28,22 @@ args = parser.parse_args()
 if not Path(args.input_file).exists():
     raise Exception(f"File {args.input_file} does not exist")
 sub_name = args.input_file
-sub_basename = Path(sub_name)
+sub_filename = (
+    Path(sub_name)
+    .with_stem(Path(sub_name).stem + "_translation")
+    .with_suffix("." + output_format)
+)
 
 print("Input file path is basename + sub_name: ", sub_basename, sub_name)
-
-import openai
 
 # Cannot change the base url for openai sdk now
 # Workaround is set the environment variable
 os.environ["OPENAI_API_BASE"] = config["openai"]["api_base"]
 # Or set it via command line: export OPENAI_API_BASE="https://api.openai.com/v1"
-openai.base_url = config["openai"]["api_base"]
+
+import openai
+
+# openai.base_url = config["openai"]["api_base"]
 openai.api_key = config["openai"]["api_key"]
 
 import pysubs2
@@ -155,12 +160,16 @@ translation, _, total_token = t.translate_by_line()
 total_price = t.calculate_price(total_token)
 # Download ass file
 
+"""
 if output_format == "ass":
-    translation.save(sub_basename + "_translation.ass")
-    print("Saved translation file:", sub_basename + "_translation.ass")
+    translation.save(str(sub_basename) + "_translation.ass")
+    print("Saved translation file:", str(sub_basename) + "_translation.ass")
 elif output_format == "srt":
-    translation.save(sub_basename + "_translation.srt")
-    print("Saved translation file:", sub_basename + "_translation.srt")
+    translation.save(str(sub_basename) + "_translation.srt")
+    print("Saved translation file:", (sub_basename) + "_translation.srt")
+"""
+translation.save(sub_filename)
+print("Saved translation file:", sub_filename)
 
 
 print("双语字幕生成完毕 All done!")
