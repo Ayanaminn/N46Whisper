@@ -13,7 +13,6 @@ The output file will be in Advanced SubStation Alpha(ass) format with built-in s
 
 This projuct can only be maintained and updated irregularly due to perosonal busyness. Thank you.
 
-2024.1.4:
 2024.1.31:
 * [N46WhisperLite](https://colab.research.google.com/github/Ayanaminn/N46Whisper/blob/dev/N46WhisperLite.ipynb) is available for daily tasks that do not need advanced settings.
 
