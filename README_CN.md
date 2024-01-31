@@ -11,8 +11,8 @@ N46Whisper 是基于 Google Colab 的应用。开发初衷旨在提高乃木坂4
 ## 最近更新:
 由于个人比较忙，此项目仍然只能不定期进行维护和更新，感谢各位。
 
-2024.1.4:
-* 添加因colab升级导致兼容问题的解决操作方法
+2024.1.31:
+* 鉴于集成的参数选项（还会）越来越多有使流程变得繁琐的趋势，这有违开发初衷。因此测试分离了一个[轻量版](https://colab.research.google.com/github/Ayanaminn/N46Whisper/blob/dev/N46WhisperLite.ipynb)，只保留最少的必要操作。
 
 2023.12.4:
 * 支持基于faster-whisper的v3模型
