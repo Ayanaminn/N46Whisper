@@ -11,7 +11,7 @@ The output file will be in Advanced SubStation Alpha(ass) format with built-in s
 
 ## What's Latest：
 
-This projuct can only be maintained and updated irregularly due to perosonal busyness. Thank you.
+**This project will NO LONGER be maintained. Thanks for all your support.**
 
 2024.4.17:
 * Add option to use Google Gemini API for translation.
