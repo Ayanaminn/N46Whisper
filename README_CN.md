@@ -26,7 +26,7 @@ N46Whisper 是基于 Google Colab 的应用。开发初衷旨在提高乃木坂4
 
 
 ## 如何使用
-* [点击这里](https://colab.research.google.com/github/cooperwang0912/N46Whisper/blob/main/N46Whisper.ipynb) 在Google Colab中打开应用.
+* [点击这里](https://colab.research.google.com/github/Ayanaminn/N46Whisper/blob/main/N46Whisper.ipynb) 在Google Colab中打开应用.
 * 上传要识别的文件并运行应用
 * 识别完成后ass文件会自动下载到本地.
 
